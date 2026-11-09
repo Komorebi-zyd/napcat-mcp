@@ -14,7 +14,6 @@ services:
       NAPCAT_TIMEOUT_SECONDS: "30"
       QQ_MCP_LOG_LEVEL: "INFO"
       QQ_MCP_LOG_MESSAGE_CONTENT: "false"
-      QQ_MCP_ALLOW_RICH_MEDIA: "false"
     ports:
       - "8888:8888"
     healthcheck:
