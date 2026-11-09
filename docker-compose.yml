@@ -10,6 +10,7 @@ services:
       # ⚠️ 这个值等 App 1 部署完、拿到地址再填
       NAPCAT_BASE_URL: "${NAPCAT_BASE_URL:?请设置}"
       NAPCAT_ACCESS_TOKEN: "${NAPCAT_ACCESS_TOKEN:?请设置}"
+      QQ_MCP_ALLOW_RICH_MEDIA: "true"
       NAPCAT_TIMEOUT_SECONDS: "30"
       QQ_MCP_LOG_LEVEL: "INFO"
       QQ_MCP_LOG_MESSAGE_CONTENT: "false"
