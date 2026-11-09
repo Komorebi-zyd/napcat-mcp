@@ -16,8 +16,12 @@ WORKDIR /app
 RUN git clone --depth 1 https://github.com/print-yuhuan/QQ-MCP-Server.git . \
  && rm -rf .git
 
-RUN pip install --no-cache-dir -r requirements.txt \
- && pip install --no-cache-dir --no-deps .
+# mcp 1.x，再装本体（pip 不会升级已满足的依赖）
+RUN pip install --no-cache-dir "mcp<2" \
+ && pip install --no-cache-dir .
+
+# 构建期验证：这个导入能过就说明版本对了
+RUN python -c "from mcp.server.fastmcp import FastMCP; print('FastMCP import OK')"
 
 EXPOSE 8888
 
